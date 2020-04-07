@@ -58,9 +58,19 @@ public class FXMLController {
     	for(int i=0 ; i<string.length();i++)
     	{
     		list.add(string.charAt(i));
+    		//System.out.println(string.charAt(i));
     	}
     	
-    	//this.model.anagrammi
+    	List <String> anagrammi =this.model.anagrammi(list);
+    	for(String s : anagrammi)
+    	{
+    	
+    		if(this.model.isCorret(s))
+    		{	txtAnagrammiCorretti.appendText(s+"\n");}
+    		else
+    			txtAnagrammiErratti.appendText(s+"\n");
+    	}
+    	
 
     }
    
